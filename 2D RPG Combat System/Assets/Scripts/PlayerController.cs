@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public bool FacingLeft { get { return facingLeft; } set { facingLeft = value; } }
+
     [SerializeField] private float moveSpeed = 1f;
 
     private PlayerControls playerControls;
@@ -11,6 +13,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     private Animator playerAnimator;
     private SpriteRenderer sr;
+    private bool facingLeft = false;
 
     private void Awake() {
         playerControls = new PlayerControls();
@@ -46,5 +49,6 @@ public class PlayerController : MonoBehaviour
         Vector3 playerScreenPoint = Camera.main.WorldToScreenPoint(transform.position);
 
         sr.flipX = mousePos.x < playerScreenPoint.x;
+        facingLeft = mousePos.x < playerScreenPoint.x;
     }
 }

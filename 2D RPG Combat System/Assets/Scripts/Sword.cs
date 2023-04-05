@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class Sword : MonoBehaviour
 {
+    [SerializeField] private GameObject slashAnimPrefab;
+    [SerializeField] private Transform slashAnimSpawnPoint;
+
     private PlayerControls playerControls;
     private Animator swordAnimator;
     private PlayerController playerController;
     private ActiveWeapon activeWeapon;
+    private GameObject slashAnim;
 
     private void Awake() {
         playerControls = new PlayerControls();
@@ -30,6 +34,19 @@ public class Sword : MonoBehaviour
 
     private void Attack() {
         swordAnimator.SetTrigger("Attack");
+
+        slashAnim = Instantiate(slashAnimPrefab, slashAnimSpawnPoint.position, Quaternion.identity);
+        slashAnim .transform.parent = this.transform.parent;
+    }
+
+    public void SwingUpFlipAnim() {
+        slashAnim.gameObject.transform.rotation = Quaternion.Euler(-180f, 0, 0);
+
+        slashAnim.GetComponent<SpriteRenderer>().flipX = playerController.FacingLeft;
+    }
+
+    public void SwingDownFlipAnim() {
+        slashAnim.GetComponent<SpriteRenderer>().flipX = playerController.FacingLeft;
     }
 
     private void MouseFollowWithOffset() {
