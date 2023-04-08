@@ -10,9 +10,11 @@ public class EnemyHealth : MonoBehaviour
 
     private int currentHealth;
     private Knockback knockback;
+    private Flash flash;
 
     private void Awake() {
         knockback = GetComponent<Knockback>();
+        flash = GetComponent<Flash>();
     }
 
     private void Start() {
@@ -22,10 +24,15 @@ public class EnemyHealth : MonoBehaviour
     public void TakeDamage(int damage) {
         currentHealth -= damage;
         knockback.GetKnockedBack(player, 15f);
-        DetectDeath();
+        StartCoroutine(CheckForDeathRoutine());
     }
 
-    private void DetectDeath() {
+    private IEnumerator CheckForDeathRoutine() {
+        yield return StartCoroutine(flash.FlashRoutine());
+        CheckForDeath();
+    }
+
+    private void CheckForDeath() {
         if (currentHealth <= 0) {
             Destroy(gameObject);
         }
