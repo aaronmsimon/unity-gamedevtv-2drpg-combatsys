@@ -8,6 +8,8 @@ public class EnemyAI : MonoBehaviour
         Roaming
     }
 
+    [SerializeField] private float roamTime = 2f;
+
     private State state;
     private EnemyPathfinding enemyPathFinding;
 
@@ -24,7 +26,7 @@ public class EnemyAI : MonoBehaviour
         while (state == State.Roaming) {
             Vector2 roamPos = GetRoamingPosition();
             enemyPathFinding.MoveTo(roamPos);
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(roamTime);
         }
     }
 

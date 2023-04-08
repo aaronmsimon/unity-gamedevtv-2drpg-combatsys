@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public bool FacingLeft { get { return facingLeft; } set { facingLeft = value; } }
+    public bool FacingLeft { get { return facingLeft; } }
 
     [SerializeField] private float moveSpeed = 1f;
     [SerializeField] private float dashMultiplier = 4f;
@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
     private SpriteRenderer sr;
     private bool facingLeft = false;
     private bool isDashing = false;
+    private float startingMoveSpeed;
 
     private void Awake() {
         playerControls = new PlayerControls();
@@ -29,6 +30,7 @@ public class PlayerController : MonoBehaviour
 
     private void Start() {
         playerControls.Movement.Dash.performed += _ => Dash();
+        startingMoveSpeed = moveSpeed;
     }
 
     private void OnEnable() {
@@ -72,7 +74,7 @@ public class PlayerController : MonoBehaviour
         moveSpeed *= dashMultiplier;
         trailRenderer.emitting = true;
         yield return new WaitForSeconds(dashTime);
-        moveSpeed /= dashMultiplier;
+        moveSpeed = startingMoveSpeed;
         trailRenderer.emitting = false;
         yield return new WaitForSeconds(dashCooldownTime);
         isDashing = false;
