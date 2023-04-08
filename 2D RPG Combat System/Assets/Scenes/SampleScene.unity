@@ -1593,6 +1593,7 @@ MonoBehaviour:
   slashAnimPrefab: {fileID: 3725782945680141656, guid: 143637a586092064fb7146fe947cda70, type: 3}
   slashAnimSpawnPoint: {fileID: 738072091}
   weaponCollider: {fileID: 805233664}
+  cooldownSeconds: 0.5
 --- !u!95 &1805178431
 Animator:
   serializedVersion: 5
