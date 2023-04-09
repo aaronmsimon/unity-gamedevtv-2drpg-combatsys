@@ -19,6 +19,6 @@ public class Parallax : MonoBehaviour
     }
 
     private void FixedUpdate() {
-        cam.transform.position = startPos + travelDist * parallaxOffset;
+        transform.position = startPos + travelDist * parallaxOffset;
     }
 }
