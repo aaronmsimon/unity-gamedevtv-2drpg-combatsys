@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : Singleton<PlayerController>
 {
     public bool FacingLeft { get { return facingLeft; } }
 
@@ -21,7 +21,9 @@ public class PlayerController : MonoBehaviour
     private bool isDashing = false;
     private float startingMoveSpeed;
 
-    private void Awake() {
+    protected override void Awake() {
+        base.Awake();
+        
         playerControls = new PlayerControls();
         rb = GetComponent<Rigidbody2D>();
         playerAnimator = GetComponent<Animator>();
