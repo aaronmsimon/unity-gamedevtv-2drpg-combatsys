@@ -6,16 +6,20 @@
         <td><img src="https://www.filepicker.io/api/file/Ov3HSDTNi1Qxo2tGOkAt" /></td>
         <td><img src="https://www.filepicker.io/api/file/NmUWdmCJTQu4S1IpFf8g" /></td>
         <td><img src="https://www.filepicker.io/api/file/oMWvozTeXY1B3LdKTXQS" /></td>
-        <td><img src="https://www.filepicker.io/api/file/r3zjWqWRRxGoP8NlQXHH)" /></td>
+        <td><img src="https://www.filepicker.io/api/file/r3zjWqWRRxGoP8NlQXHH" /></td>
     </tr>
 </table>
 
-![](https://www.filepicker.io/api/file/qfRROH6cRZa8UpYo85Vd)
-![](https://www.filepicker.io/api/file/4OnXrQpCSi2Ny3xybchA)
+<table>
+    <tr>
+        <td><img src="https://www.filepicker.io/api/file/qfRROH6cRZa8UpYo85Vd" /></td>
+        <td><img src="https://www.filepicker.io/api/file/4OnXrQpCSi2Ny3xybchA" /></td>
+    </tr>
+</table>
 
 ## Instructor
 Stephen Hubbard
-![](https://www.filepicker.io/api/file/RF2tbC4kSReyIy0Bnhyx)
+<img src="https://www.filepicker.io/api/file/RF2tbC4kSReyIy0Bnhyx" width="25%" />
 
 ## urriculum
 ### Introduction & Setup
