@@ -19,7 +19,7 @@
 
 ## Instructor
 <img src="https://www.filepicker.io/api/file/RF2tbC4kSReyIy0Bnhyx" width="15%" />
-##### Stephen Hubbard
+<h4>Stephen Hubbard</h4>
 
 ## Curriculum
 ### Introduction & Setup
