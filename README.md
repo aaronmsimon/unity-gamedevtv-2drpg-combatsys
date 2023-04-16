@@ -18,10 +18,10 @@
 </table>
 
 ## Instructor
-Stephen Hubbard
-<img src="https://www.filepicker.io/api/file/RF2tbC4kSReyIy0Bnhyx" width="25%" />
+<img src="https://www.filepicker.io/api/file/RF2tbC4kSReyIy0Bnhyx" width="15%" />
+##### Stephen Hubbard
 
-## urriculum
+## Curriculum
 ### Introduction & Setup
 - Welcome To The Course (1:51)
 - Set Up Unity & VS Code (10:08)
