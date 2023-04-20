@@ -42,3 +42,41 @@ by [GameDev.tv](https://www.gamedev.tv)
 - Player Physics (8:08)
 
 ### Combat
+- Section Intro - Combat (0:44)
+- [Enemy State (11:07)](https://github.com/aaronmsimon/unity-gamedevtv-2drpg-combatsys/commit/ae5a5a1b3af1e17f7b43b357fd0816482cc53e68)
+- Sword Animation (12:25)
+- Swing Both Directions (7:38)
+- Sword Visual Feedback (14:37)
+- Sword Collision (6:56)
+- Enemy Health (5:46)
+- Knockback (8:54)
+- Damage Flash (8:00)
+- Death VFX (8:21)
+- Constant Swinging (4:35)
+- Player Dash (9:15)
+- Section Cleanup (5:48)
+
+### Environment
+- Section Intro - Environment (0:51)
+- Cinemachine (6:07)
+- Tilemap (8:52)
+- Rule Tiles (12:47)
+- Animated Tiles (3:04)
+- Sprite Transparency (11:29)
+- Parallax (3:45)
+- Destructible Objects (5:17)
+
+### Portals And Scene Transitions
+- Section Intro - Portals & Scene Transitions (0:46)
+- Second Scene (1:53)
+- Generic Singleton Class (9:16)
+- Scene Entry (8:10)
+- Camera Controller (5:08)
+- Fade Transition (10:32)
+- Portal Visual Effect (6:05)
+
+### URP & Lighting
+- Section Intro - URP & Lighting (1:08)
+- Post Processing Basics (4:01)
+- 2D Lighting (7:23)
+- Random Idle Animations (3:36)
