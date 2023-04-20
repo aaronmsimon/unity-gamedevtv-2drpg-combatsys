@@ -1,4 +1,6 @@
 [Unity 2D RPG: Complete Combat System](https://www.gamedev.tv/p/unity-2d-rpg-combat)
+by [GameDev.tv](https://www.gamedev.tv)
+
 ![Unity 2D RPG: Complete Combat System](https://cdn.filestackcontent.com/uVFETbJaQ6my43PerpgZ)
 
 
