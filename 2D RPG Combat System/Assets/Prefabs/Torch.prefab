@@ -229,7 +229,7 @@ Transform:
   - {fileID: 7700892236189662797}
   - {fileID: 4923176011348585703}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!210 &6364001922780238031
 SortingGroup:
@@ -241,7 +241,7 @@ SortingGroup:
   m_Enabled: 1
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 0
   m_SortAtRoot: 0
 --- !u!1 &4389527044243126258
 GameObject:
@@ -297,7 +297,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: e17365c1bf8c49f4b99567c69959f0bc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
