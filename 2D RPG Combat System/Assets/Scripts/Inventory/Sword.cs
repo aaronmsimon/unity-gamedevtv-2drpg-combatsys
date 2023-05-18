@@ -2,60 +2,37 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Sword : MonoBehaviour
+public class Sword : MonoBehaviour, IWeapon
 {
     [SerializeField] private GameObject slashAnimPrefab;
     [SerializeField] private Transform slashAnimSpawnPoint;
     [SerializeField] private Transform weaponCollider;
     [SerializeField] private float cooldownSeconds;
 
-    private PlayerControls playerControls;
     private Animator swordAnimator;
     private PlayerController playerController;
     private ActiveWeapon activeWeapon;
     private GameObject slashAnim;
-    private bool attackButtonDown, isAttacking = false;
 
     private void Awake() {
-        playerControls = new PlayerControls();
         swordAnimator = GetComponent<Animator>();
         playerController = GetComponentInParent<PlayerController>();
         activeWeapon = GetComponentInParent<ActiveWeapon>();
     }
 
-    private void OnEnable() {
-        playerControls.Enable();
-    }
-
-    private void Start() {
-        playerControls.Combat.Attack.started += _ => StartAttacking();
-        playerControls.Combat.Attack.canceled += _ => StopAttacking();
-    }
-
     private void Update() {
         MouseFollowWithOffset();
-        Attack();
     }
 
-    private void StartAttacking() {
-        attackButtonDown = true;
-    }
+    public void Attack() {
+        // isAttacking = true;
+        swordAnimator.SetTrigger("Attack");
+        weaponCollider.gameObject.SetActive(true);
 
-    private void StopAttacking() {
-        attackButtonDown = false;
-    }
+        slashAnim = Instantiate(slashAnimPrefab, slashAnimSpawnPoint.position, Quaternion.identity);
+        slashAnim.transform.parent = this.transform.parent;
 
-    private void Attack() {
-        if (attackButtonDown && !isAttacking) {
-            isAttacking = true;
-            swordAnimator.SetTrigger("Attack");
-            weaponCollider.gameObject.SetActive(true);
-
-            slashAnim = Instantiate(slashAnimPrefab, slashAnimSpawnPoint.position, Quaternion.identity);
-            slashAnim.transform.parent = this.transform.parent;
-
-            StartCoroutine(AttackCooldownRoutine());
-        }
+        StartCoroutine(AttackCooldownRoutine());
     }
 
     public void DoneAttackingAnimEvent() {
@@ -84,6 +61,6 @@ public class Sword : MonoBehaviour
 
     private IEnumerator AttackCooldownRoutine() {
         yield return new WaitForSeconds(cooldownSeconds);
-        isAttacking = false;
+        ActiveWeapon.Instance.ToggleIsAttacking(false);
     }
 }
