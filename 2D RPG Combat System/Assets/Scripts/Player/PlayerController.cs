@@ -11,6 +11,7 @@ public class PlayerController : Singleton<PlayerController>
     [SerializeField] private float dashTime = .2f;
     [SerializeField] private float dashCooldownTime = .25f;
     [SerializeField] private TrailRenderer trailRenderer;
+    [SerializeField] private Transform weaponCollider;
 
     private PlayerControls playerControls;
     private Vector2 movement;
@@ -46,6 +47,10 @@ public class PlayerController : Singleton<PlayerController>
 
     private void FixedUpdate() {
         Move();
+    }
+
+    public Transform GetWeaponCollider() {
+        return weaponCollider;
     }
 
     private void PlayerInput() {
