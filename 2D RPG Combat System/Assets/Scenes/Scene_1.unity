@@ -16071,6 +16071,7 @@ MonoBehaviour:
   dashTime: 0.2
   dashCooldownTime: 0.25
   trailRenderer: {fileID: 161050569}
+  weaponCollider: {fileID: 805233664}
 --- !u!95 &1492861288
 Animator:
   serializedVersion: 5
@@ -16977,7 +16978,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31c46e0330798c943ad3bfb283a7a109, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentActiveWeapon: {fileID: 0}
 --- !u!1 &1727778652
 GameObject:
   m_ObjectHideFlags: 0
