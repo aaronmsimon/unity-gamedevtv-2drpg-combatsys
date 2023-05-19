@@ -5,12 +5,12 @@ using UnityEngine;
 public class Sword : MonoBehaviour, IWeapon
 {
     [SerializeField] private GameObject slashAnimPrefab;
-    [SerializeField] private Transform slashAnimSpawnPoint;
     [SerializeField] private float cooldownSeconds;
 
     private Animator swordAnimator;
     private GameObject slashAnim;
     private Transform weaponCollider;
+    private Transform slashAnimSpawnPoint;
 
     private void Awake() {
         swordAnimator = GetComponent<Animator>();
@@ -18,7 +18,7 @@ public class Sword : MonoBehaviour, IWeapon
 
     private void Start() {
         // two methods:
-        // 1) use a getter method
+        // 1) use a getter method (but can't use #2 here because it gets toggled as inactive)
         weaponCollider = PlayerController.Instance.GetWeaponCollider();
         // 2) use a string referencer (cringe)
         slashAnimSpawnPoint = GameObject.Find("SlashAnimSpawnPoint").transform;
