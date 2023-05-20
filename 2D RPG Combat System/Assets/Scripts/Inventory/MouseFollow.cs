@@ -16,6 +16,6 @@ public class MouseFollow : MonoBehaviour
 
         Vector2 dir = transform.position - mousePos;
 
-        // transform.right = -dir;
+        transform.right = -dir;
     }
 }

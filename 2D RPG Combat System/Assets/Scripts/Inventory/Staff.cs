@@ -9,12 +9,12 @@ public class Staff : MonoBehaviour, IWeapon
     }
 
     private void MouseFollowWithOffset() {
-        Vector3 mousePos = Input.mousePosition;
-        Vector3 playerScreenPoint = Camera.main.WorldToScreenPoint(PlayerController.Instance.transform.position);
+        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector3 playerPos = PlayerController.Instance.transform.position;
 
         float angle = Mathf.Atan2(mousePos.y, mousePos.x) * Mathf.Rad2Deg;
 
-        ActiveWeapon.Instance.transform.rotation = Quaternion.Euler(0, mousePos.x < playerScreenPoint.x ? 180f : 0f, angle);
+        ActiveWeapon.Instance.transform.rotation = Quaternion.Euler(0, mousePos.x < playerPos.x ? -180f : 0f, (mousePos.x < playerPos.x ? 180f - angle : angle));
     }
 
     public void Attack() {

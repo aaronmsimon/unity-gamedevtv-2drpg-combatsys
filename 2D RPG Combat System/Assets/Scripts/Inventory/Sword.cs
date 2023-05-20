@@ -54,40 +54,17 @@ public class Sword : MonoBehaviour, IWeapon
     }
 
     private void MouseFollowWithOffset() {
-        /*Vector3*/ mousePos = Input.mousePosition;
-        Vector3 playerScreenPoint = Camera.main.WorldToScreenPoint(PlayerController.Instance.transform.position);
+        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector3 playerPos = PlayerController.Instance.transform.position;
 
-        /*float*/ angle = Mathf.Atan2(Camera.main.ScreenToWorldPoint(mousePos).y, Camera.main.ScreenToWorldPoint(mousePos).x) * Mathf.Rad2Deg;
+        float angle = Mathf.Atan2(mousePos.y, mousePos.x) * Mathf.Rad2Deg;
 
-        ActiveWeapon.Instance.transform.rotation = Quaternion.Euler(0, mousePos.x < playerScreenPoint.x ? -180f : 0f, (mousePos.x < playerScreenPoint.x ? 180f - angle : angle));
-        weaponCollider.transform.rotation = Quaternion.Euler(0, mousePos.x < playerScreenPoint.x ? 180f : 0f, 0);
+        ActiveWeapon.Instance.transform.rotation = Quaternion.Euler(0, mousePos.x < playerPos.x ? -180f : 0f, (mousePos.x < playerPos.x ? 180f - angle : angle));
+        weaponCollider.transform.rotation = Quaternion.Euler(0, mousePos.x < playerPos.x ? 180f : 0f, 0);
     }
 
     private IEnumerator AttackCooldownRoutine() {
         yield return new WaitForSeconds(cooldownSeconds);
         ActiveWeapon.Instance.ToggleIsAttacking(false);
-    }
-
-    // everthing below here can be removed
-    public Vector3 mousePos;
-    public float angle;
-    private void OnDrawGizmos() {
-        Debug.DrawRay(Camera.main.transform.position, Camera.main.ScreenToWorldPoint(mousePos), Color.red);
-
-        angle = Mathf.Atan2(Camera.main.ScreenToWorldPoint(mousePos).y, Camera.main.ScreenToWorldPoint(mousePos).x) * Mathf.Rad2Deg;
-        Debug.Log(angle);
-        //if (angle > 90) angle += 90;
-        float angleInRadians = Mathf.Deg2Rad * angle;
-        float distance = 10f;
-
-        // Calculate the x and z components of the vector
-        float x = distance * Mathf.Sin(angleInRadians);
-        float z = distance * Mathf.Cos(angleInRadians);
-
-        Debug.DrawLine(new Vector3(-10f, 0), new Vector3(10f, 0), Color.red);
-
-        // Create the Vector3 using the calculated components
-        Debug.DrawRay(transform.position, new Vector3(x, z, 0f), Color.cyan);
-        Debug.DrawRay(transform.position, transform.up * 10f, Color.blue);
     }
 }
