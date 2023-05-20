@@ -9,6 +9,7 @@ public class ActiveWeapon : Singleton<ActiveWeapon>
     private bool attackButtonDown, isAttacking = false;
 
     private PlayerControls playerControls;
+    private float timeBetweenAttacks;
 
     protected override void Awake() {
         base.Awake();
@@ -23,6 +24,9 @@ public class ActiveWeapon : Singleton<ActiveWeapon>
     private void Start() {
         playerControls.Combat.Attack.started += _ => StartAttacking();
         playerControls.Combat.Attack.canceled += _ => StopAttacking();
+
+        // prevent ability to attack when game loads
+        AttackCooldown();
     }
 
     private void Update() {
@@ -31,6 +35,9 @@ public class ActiveWeapon : Singleton<ActiveWeapon>
 
     public void NewWeapon(MonoBehaviour newWeapon) {
         CurrentActiveWeapon = newWeapon;
+        // to avoid spamming attacks by toggling between two weapons
+        AttackCooldown();
+        timeBetweenAttacks = (CurrentActiveWeapon as IWeapon).GetWeaponInfo().weaponCooldown;
     }
 
     public void WeaponNull() {
@@ -39,7 +46,7 @@ public class ActiveWeapon : Singleton<ActiveWeapon>
 
     private void Attack() {
         if (attackButtonDown && !isAttacking) {
-            isAttacking = true;
+            AttackCooldown();
             (CurrentActiveWeapon as IWeapon).Attack();
         }
     }
@@ -52,7 +59,15 @@ public class ActiveWeapon : Singleton<ActiveWeapon>
         attackButtonDown = false;
     }
 
-    public void ToggleIsAttacking(bool value) {
-        isAttacking = value;
+    private void AttackCooldown() {
+        isAttacking = true;
+        // As a safety measure, since this class only has one coroutine attached to it
+        StopAllCoroutines();
+        StartCoroutine(TimeBetweenAttacksRoutine());
+    }
+
+    private IEnumerator TimeBetweenAttacksRoutine() {
+        yield return new WaitForSeconds(timeBetweenAttacks);
+        isAttacking = false;
     }
 }

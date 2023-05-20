@@ -5,7 +5,7 @@ using UnityEngine;
 public class Sword : MonoBehaviour, IWeapon
 {
     [SerializeField] private GameObject slashAnimPrefab;
-    [SerializeField] private float cooldownSeconds;
+    [SerializeField] private WeaponInfo weaponInfo;
 
     private Animator swordAnimator;
     private GameObject slashAnim;
@@ -29,14 +29,15 @@ public class Sword : MonoBehaviour, IWeapon
     }
 
     public void Attack() {
-        // isAttacking = true;
         swordAnimator.SetTrigger("Attack");
         weaponCollider.gameObject.SetActive(true);
 
         slashAnim = Instantiate(slashAnimPrefab, slashAnimSpawnPoint.position, Quaternion.identity);
         slashAnim.transform.parent = this.transform.parent;
+    }
 
-        StartCoroutine(AttackCooldownRoutine());
+    public WeaponInfo GetWeaponInfo() {
+        return weaponInfo;
     }
 
     public void DoneAttackingAnimEvent() {
@@ -61,10 +62,5 @@ public class Sword : MonoBehaviour, IWeapon
 
         ActiveWeapon.Instance.transform.rotation = Quaternion.Euler(0, mousePos.x < playerPos.x ? -180f : 0f, (mousePos.x < playerPos.x ? 180f - angle : angle));
         weaponCollider.transform.rotation = Quaternion.Euler(0, mousePos.x < playerPos.x ? 180f : 0f, 0);
-    }
-
-    private IEnumerator AttackCooldownRoutine() {
-        yield return new WaitForSeconds(cooldownSeconds);
-        ActiveWeapon.Instance.ToggleIsAttacking(false);
     }
 }

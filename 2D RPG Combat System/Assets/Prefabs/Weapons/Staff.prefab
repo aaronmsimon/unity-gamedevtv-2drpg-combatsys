@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5905735408009283495}
   - component: {fileID: 2744162012057383868}
-  - component: {fileID: 3959917901753017747}
   - component: {fileID: 787186221324992248}
+  - component: {fileID: 3959917901753017747}
   m_Layer: 0
   m_Name: Staff
   m_TagString: Untagged
@@ -87,18 +87,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3959917901753017747
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 156970181749598351}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b10a6914606db44da950de9e2a435ef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!95 &787186221324992248
 Animator:
   serializedVersion: 5
@@ -120,6 +108,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3959917901753017747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 156970181749598351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b10a6914606db44da950de9e2a435ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponInfo: {fileID: 11400000, guid: 4ccbd12b903d03d4f8e7992e7ec5519b, type: 2}
 --- !u!1 &844513999808405141
 GameObject:
   m_ObjectHideFlags: 0

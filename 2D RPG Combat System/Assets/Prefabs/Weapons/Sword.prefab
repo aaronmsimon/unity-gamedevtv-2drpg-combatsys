@@ -120,6 +120,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slashAnimPrefab: {fileID: 3725782945680141656, guid: 143637a586092064fb7146fe947cda70, type: 3}
-  slashAnimSpawnPoint: {fileID: 0}
-  weaponCollider: {fileID: 0}
-  cooldownSeconds: 0.5
+  weaponInfo: {fileID: 11400000, guid: 3b4f53bcdb86d564e975fec6de76cafa, type: 2}
