@@ -250,6 +250,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d8494d8ca0060b4dbd9dc41a6e318b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  roamTime: 2
 --- !u!114 &1042279840151878074
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -275,9 +276,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 457e66177b10fb24fb852d2db7515367, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 10
+  startingHealth: 3
   deathVFX: {fileID: 5500310445155932212, guid: 01e816b335ee3b44ab55d9e5b2449eda, type: 3}
   player: {fileID: 0}
+  knockBackThrust: 15
 --- !u!114 &4993148751256541442
 MonoBehaviour:
   m_ObjectHideFlags: 0
