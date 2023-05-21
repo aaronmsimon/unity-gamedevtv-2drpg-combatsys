@@ -5,6 +5,15 @@ using UnityEngine;
 public class Staff : MonoBehaviour, IWeapon
 {
     [SerializeField] private WeaponInfo weaponInfo;
+    [SerializeField] private GameObject magicLaser;
+    [SerializeField] private Transform magicLaserSpawnPoint;
+
+    private Animator staffAnimator;
+    readonly int LASER_HASH = Animator.StringToHash("Attack");
+
+    private void Awake() {
+        staffAnimator = GetComponent<Animator>();
+    }
 
     private void Update() {
         MouseFollowWithOffset();
@@ -20,10 +29,14 @@ public class Staff : MonoBehaviour, IWeapon
     }
 
     public void Attack() {
-        Debug.Log("Staff attack");
+        staffAnimator.SetTrigger(LASER_HASH);
     }
 
     public WeaponInfo GetWeaponInfo() {
         return weaponInfo;
+    }
+
+    public void SpawnProjectileAnimEvent() {
+        Instantiate(magicLaser, magicLaserSpawnPoint.position, Quaternion.identity);
     }
 }
