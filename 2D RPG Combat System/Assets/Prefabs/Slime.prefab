@@ -94,13 +94,16 @@ GameObject:
   m_Component:
   - component: {fileID: 7685704099029348711}
   - component: {fileID: 3463811361096060519}
+  - component: {fileID: 4829195420930309034}
   - component: {fileID: 2302890911318605939}
   - component: {fileID: 965211190164938827}
+  - component: {fileID: 8177621867474463677}
   - component: {fileID: 8040387309444370349}
   - component: {fileID: 1042279840151878074}
   - component: {fileID: 7948865406352196030}
   - component: {fileID: 4993148751256541442}
   - component: {fileID: 6908646251632051443}
+  - component: {fileID: 2636395181306113490}
   m_Layer: 0
   m_Name: Slime
   m_TagString: Untagged
@@ -122,7 +125,7 @@ Transform:
   m_Children:
   - {fileID: 5412620548372744557}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3463811361096060519
 SpriteRenderer:
@@ -176,6 +179,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!210 &4829195420930309034
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7867829379377040592}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortAtRoot: 0
 --- !u!50 &2302890911318605939
 Rigidbody2D:
   serializedVersion: 4
@@ -238,6 +253,27 @@ CapsuleCollider2D:
   m_Offset: {x: 0.013720991, y: 0.0054894676}
   m_Size: {x: 0.99559665, y: 0.7705742}
   m_Direction: 1
+--- !u!95 &8177621867474463677
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7867829379377040592}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 37ab65e5703075f4eb017c38f28a586f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &8040387309444370349
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -308,3 +344,15 @@ MonoBehaviour:
   whiteFlashMat: {fileID: 2100000, guid: 8b67d155f6e00d44aa1ebf50c663bda7, type: 2}
   flashCount: 2
   flashTime: 0.15
+--- !u!114 &2636395181306113490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7867829379377040592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b38c2db51405dcb45b94c612d7e86065, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
