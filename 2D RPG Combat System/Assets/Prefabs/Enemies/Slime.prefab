@@ -287,6 +287,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roamTime: 2
+  attackRange: 0
+  enemyType: {fileID: 0}
+  attackCooldown: 0
 --- !u!114 &1042279840151878074
 MonoBehaviour:
   m_ObjectHideFlags: 0

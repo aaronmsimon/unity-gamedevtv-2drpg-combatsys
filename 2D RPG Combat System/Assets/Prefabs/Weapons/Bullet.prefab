@@ -164,4 +164,4 @@ MonoBehaviour:
   moveSpeed: 8
   projectileVFX: {fileID: 5500310445155932212, guid: 2431ee62bd6dbfd4292e583c66e72739, type: 3}
   isEnemyProjectile: 1
-  projectileRange: 10
+  projectileRange: 30

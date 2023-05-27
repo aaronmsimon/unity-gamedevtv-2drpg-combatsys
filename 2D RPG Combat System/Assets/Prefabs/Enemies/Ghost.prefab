@@ -103,6 +103,7 @@ GameObject:
   - component: {fileID: 5366475297405730772}
   - component: {fileID: 8657712648369963187}
   - component: {fileID: 263453994325968740}
+  - component: {fileID: 7178649119993615595}
   m_Layer: 0
   m_Name: Ghost
   m_TagString: Untagged
@@ -117,7 +118,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5138999309989649534}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 8.16234, y: -2.1736157, z: -0.39530018}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -265,6 +266,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roamTime: 2
+  attackRange: 5
+  enemyType: {fileID: 7178649119993615595}
+  attackCooldown: 2
 --- !u!114 &3905217609006732845
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -334,3 +338,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b38c2db51405dcb45b94c612d7e86065, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7178649119993615595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5138999309989649534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fce305285349b64880b338b370277cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 7379764006874541998, guid: 127ed0352db5dde48ab40e9514030f4e, type: 3}
