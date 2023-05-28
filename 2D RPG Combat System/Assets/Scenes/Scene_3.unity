@@ -1030,6 +1030,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7178649119993615595, guid: f6159c13301391d46a6bd51b750d124e, type: 3}
+      propertyPath: stagger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7178649119993615595, guid: f6159c13301391d46a6bd51b750d124e, type: 3}
+      propertyPath: oscillate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7178649119993615595, guid: f6159c13301391d46a6bd51b750d124e, type: 3}
       propertyPath: burstCount
       value: 3
       objectReference: {fileID: 0}
