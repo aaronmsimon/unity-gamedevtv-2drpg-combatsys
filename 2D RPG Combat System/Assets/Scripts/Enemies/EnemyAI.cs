@@ -11,6 +11,8 @@ public class EnemyAI : MonoBehaviour
 
     [SerializeField] private float roamTime = 2f;
     [SerializeField] private float attackRange = 5f;
+    [SerializeField] private bool showAttackRange;
+    [SerializeField][ColorUsage(true)] private Color attackRangeColor;
     [SerializeField] private MonoBehaviour enemyType;
     [SerializeField] private float attackCooldown = 2f;
     [SerializeField] private bool stopMovingWhileAttacking = false;
@@ -89,5 +91,12 @@ public class EnemyAI : MonoBehaviour
     private Vector2 GetRoamingPosition() {
         timeRoaming = 0f;
         return new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f));
+    }
+
+    private void OnDrawGizmos() {
+        Gizmos.color = attackRangeColor;
+        if (showAttackRange) {
+            Gizmos.DrawWireSphere(transform.position, attackRange);
+        }
     }
 }
