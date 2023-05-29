@@ -8,6 +8,7 @@ public class GrapeProjectile : MonoBehaviour
     [SerializeField] private float heightY = 3f;
     [SerializeField] private AnimationCurve animCurve;
     [SerializeField] private GameObject grapeShadowPrefab;
+    [SerializeField] private GameObject grapeLandSplatterPrefab;
 
     private void Start() {
         Vector3 playerPos = PlayerController.Instance.transform.position;
@@ -34,6 +35,7 @@ public class GrapeProjectile : MonoBehaviour
         }
 
         Destroy(gameObject);
+        Instantiate(grapeLandSplatterPrefab, transform.position, Quaternion.identity);
     }
 
     private IEnumerator MoveGrapeShadowRoutine(GameObject grapeShadow, Vector3 startPos, Vector3 endPos) {
