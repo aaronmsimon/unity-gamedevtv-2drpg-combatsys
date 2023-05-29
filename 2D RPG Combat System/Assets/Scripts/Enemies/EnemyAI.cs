@@ -10,7 +10,7 @@ public class EnemyAI : MonoBehaviour
     }
 
     [SerializeField] private float roamTime = 2f;
-    [SerializeField] private float attackRange = 5f;
+    [SerializeField] private float attackRange = 0f;
     [SerializeField] private bool showAttackRange;
     [SerializeField][ColorUsage(true)] private Color attackRangeColor;
     [SerializeField] private MonoBehaviour enemyType;

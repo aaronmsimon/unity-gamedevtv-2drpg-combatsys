@@ -22,7 +22,12 @@ public class EnemyPathfinding : MonoBehaviour
         
         Move();
 
-        sr.flipX = movement.x < 0;
+        // by changing to check for greater/less than, if == 0, it will use the latest value
+        if (movement.x < 0) {
+            sr.flipX = true;
+        } else if (movement.x > 0) {
+            sr.flipX = false;
+        }
     }
 
     private void Move() {

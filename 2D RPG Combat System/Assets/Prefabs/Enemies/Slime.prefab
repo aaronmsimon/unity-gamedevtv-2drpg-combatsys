@@ -119,7 +119,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7867829379377040592}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.14, y: -0.48, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -288,8 +288,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   roamTime: 2
   attackRange: 0
+  showAttackRange: 0
+  attackRangeColor: {r: 0, g: 0, b: 0, a: 0}
   enemyType: {fileID: 0}
   attackCooldown: 0
+  stopMovingWhileAttacking: 0
 --- !u!114 &1042279840151878074
 MonoBehaviour:
   m_ObjectHideFlags: 0
