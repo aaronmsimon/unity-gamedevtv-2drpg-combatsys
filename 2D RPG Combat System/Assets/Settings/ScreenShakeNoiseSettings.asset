@@ -12,5 +12,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7f59e54f2bfd184b9dd451a678d089b, type: 3}
   m_Name: ScreenShakeNoiseSettings
   m_EditorClassIdentifier: 
-  PositionNoise: []
+  PositionNoise:
+  - X:
+      Frequency: 6
+      Amplitude: 0.35
+      Constant: 0
+    Y:
+      Frequency: 3
+      Amplitude: 0.15
+      Constant: 0
+    Z:
+      Frequency: 0
+      Amplitude: 0
+      Constant: 0
+  - X:
+      Frequency: 10
+      Amplitude: 0.75
+      Constant: 0
+    Y:
+      Frequency: 8
+      Amplitude: 0.5
+      Constant: 0
+    Z:
+      Frequency: 0
+      Amplitude: 0
+      Constant: 0
   OrientationNoise: []
