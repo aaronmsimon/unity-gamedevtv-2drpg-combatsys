@@ -148,3 +148,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinPrefab: {fileID: 1736624775070669886, guid: 9be1daca3ca0909418431148b2b164ad, type: 3}
+  healthPrefab: {fileID: 1736624775070669886, guid: 1a34a9511eb849b478651c0231a37785, type: 3}
+  staminaPrefab: {fileID: 1736624775070669886, guid: e9143e53dfe9c5549b283e205e347807, type: 3}

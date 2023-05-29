@@ -10,13 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 76234761108554918}
   - component: {fileID: 3789786049206338842}
-  - component: {fileID: 985404392813192992}
   - component: {fileID: 2106825836149340595}
   - component: {fileID: 605859870966067845}
   - component: {fileID: 5331173034995245074}
-  - component: {fileID: -2263757601944123443}
   m_Layer: 0
-  m_Name: Gold Coin
+  m_Name: Stamina
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35,7 +33,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3789786049206338842
 SpriteRenderer:
@@ -57,7 +55,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 99cab118aaa7fb14f86f12c70fad500c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -78,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1660638141, guid: ece4e59ead0058f46bdbad7dff46b74c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f21d8b205e115344fac1346c8e40b4d9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -89,27 +87,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &985404392813192992
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1736624775070669886}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 571a96632747ee846bf5de586ec62458, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!70 &2106825836149340595
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -184,6 +161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17ded6d6ae85ebb49b0af5096baef3ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pickupType: 2
   pickupDistance: 5
   pickupAcceleration: 0.5
   moveSpeed: 2
@@ -215,15 +193,3 @@ MonoBehaviour:
   popupTime: 0.35
   popupDistanceMin: 0.1
   popupDistanceMax: 1
---- !u!114 &-2263757601944123443
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1736624775070669886}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b38c2db51405dcb45b94c612d7e86065, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
