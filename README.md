@@ -116,7 +116,7 @@ by [GameDev.tv](https://www.gamedev.tv)
 
 ### Polish
 - Section Intro - Polish (1:03)
-- Pickups (8:37)
+- [Pickups (8:37)](https://github.com/aaronmsimon/unity-gamedevtv-2drpg-combatsys/commit/a14e4ba18d79cea97ad67ea551911910cd73c956)
 - Spawn Pop-up (6:03)
 - Custom Cursor (10:32)
 - Health & Stamina Globes (9:25)

@@ -4,9 +4,17 @@ using UnityEngine;
 
 public class Pickup : MonoBehaviour
 {
+    [Header("Pickup Mechanics")]
     [SerializeField] private float pickupDistance = 5f;
     [SerializeField] private float pickupAcceleration = 0.5f;
     [SerializeField] private float moveSpeed = 2;
+
+    [Header("Popup Mechanics")]
+    [SerializeField] private AnimationCurve animCurve;
+    [SerializeField] private float popupHeight;
+    [SerializeField] private float popupTime;
+    [SerializeField] private float popupDistanceMin;
+    [SerializeField] private float popupDistanceMax;
 
     private Vector3 moveDir;
 
@@ -18,6 +26,7 @@ public class Pickup : MonoBehaviour
 
     private void Start() {
         ResetMovement();
+        StartCoroutine(AnimCurveSpawnRoutine());
     }
 
     private void Update() {
@@ -44,5 +53,26 @@ public class Pickup : MonoBehaviour
     private void ResetMovement() {
         moveDir = Vector3.zero;
         moveSpeed = 0;
+    }
+
+    private IEnumerator AnimCurveSpawnRoutine() {
+        Vector2 startPos = transform.position;
+        float angle = Random.Range(0, 359);
+        float angleInRadians = angle * Mathf.Deg2Rad;
+        float distance = Random.Range(popupDistanceMin, popupDistanceMax);
+        Vector2 endPos = startPos + new Vector2(distance * Mathf.Cos(angleInRadians), distance * Mathf.Sin(angleInRadians));
+
+        float timePassed = 0f;
+
+        while (timePassed < popupTime) {
+            timePassed += Time.deltaTime;
+            float linearT = timePassed / popupTime;
+            float heightT = animCurve.Evaluate(linearT);
+            float height = Mathf.Lerp(0f, popupHeight, heightT);
+
+            transform.position = Vector2.Lerp(startPos, endPos, linearT) + new Vector2(0f, height);
+
+            yield return null;
+        }
     }
 }
