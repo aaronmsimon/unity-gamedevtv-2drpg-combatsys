@@ -37,6 +37,8 @@ public class PlayerHealth : MonoBehaviour
         
         // knock player back
         knockback.GetKnockedBack(damageSource, knockbackThrust);
+        // screen shake
+        ScreenShakeManager.Instance.ScreenShake();
         // flash white material
         StartCoroutine(flash.FlashRoutine());
         
