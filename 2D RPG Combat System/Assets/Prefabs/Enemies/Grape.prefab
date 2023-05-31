@@ -237,7 +237,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingHealth: 3
   deathVFX: {fileID: 5500310445155932212, guid: 0fa43ad3edbc75642bf7d4a12bd151f3, type: 3}
-  player: {fileID: 0}
+  player: {fileID: 5677102055499128695, guid: 8c07a52c24e547248a74d1ae6ed94012, type: 3}
   knockBackThrust: 15
 --- !u!114 &8177621414275046689
 MonoBehaviour:
