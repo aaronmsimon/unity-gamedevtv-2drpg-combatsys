@@ -13,6 +13,8 @@ public class PlayerHealth : Singleton<PlayerHealth>
     private bool canTakeDamage = true;
     private Slider healthSlider;
 
+    const string HEALTH_SLIDER = "Health Slider";
+
     private Knockback knockback;
     private Flash flash;
 
@@ -69,7 +71,7 @@ public class PlayerHealth : Singleton<PlayerHealth>
 
     private void UpdateHealthSlider() {
         if (healthSlider == null) {
-            healthSlider = GameObject.Find("Health Slider").GetComponent<Slider>();
+            healthSlider = GameObject.Find(HEALTH_SLIDER).GetComponent<Slider>();
         }
 
         healthSlider.maxValue = maxHealth;

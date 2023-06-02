@@ -90,7 +90,7 @@ public class Pickup : MonoBehaviour
         switch (pickupType) {
             case PickupType.Coin:
                 // coin stuff
-                Debug.Log("Received one gold coin.");
+                EconomyManager.Instance.UpdateGoldText();
                 break;
             case PickupType.Health:
                 // heal player
