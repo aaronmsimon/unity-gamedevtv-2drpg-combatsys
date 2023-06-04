@@ -95,11 +95,10 @@ public class Pickup : MonoBehaviour
             case PickupType.Health:
                 // heal player
                 PlayerHealth.Instance.Heal();
-                Debug.Log("Healed player.");
                 break;
             case PickupType.Stamina:
                 // stamina stuff
-                Debug.Log("Received one stamina globe.");
+                Stamina.Instance.RefreshStamina();
                 break;
         }
     }

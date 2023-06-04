@@ -74,9 +74,10 @@ public class PlayerController : Singleton<PlayerController>
     }
 
     private void Dash() {
-        if (!isDashing) {
+        if (!isDashing && Stamina.Instance.CurrentStamina > 0) {
             StartCoroutine(DashRoutine());
             isDashing = true;
+            Stamina.Instance.UseStamina();
         }
     }
 
